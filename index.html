@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TANDIR — Samarqand nonvoyxonasi</title>
+<meta name="description" content="Tandirda pishgan patir, lochira va obi non. Har kuni to'rt marta yangi tortiladi.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a href="#top" class="logo">TANDIR</a>
+  <nav>
+    <a href="#non">Nonlar</a>
+    <a href="#pishish">Pishish</a>
+    <a href="#xamir">Xamir</a>
+    <a href="#buyurtma">Buyurtma</a>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <canvas id="fire" aria-hidden="true"></canvas>
+  <div class="hero-text">
+    <h1>Non devorga<br>yopishganda pishadi.</h1>
+    <p>Samarqand nonvoyxonasida har kuni to'rt marta tandir qizdiriladi. Xamir kechqurun qoriladi, ertalab devorga yopiladi.</p>
+    <div class="clock" id="clock"></div>
+    <a class="btn" href="#buyurtma">Non buyurtma qilish</a>
+    <p class="hint">Cho'g'lar ustida sichqonchani yuritsangiz, uchqunlar sizga ergashadi.</p>
+  </div>
+</section>
+
+<section id="non" class="wrap">
+  <h2>Nonlar</h2>
+  <p class="lead">Hammasi tandirda pishadi. Qaysi biri qaysi vaqtda tortilishini ham ko'rsatdik.</p>
+  <div class="chips" role="group" aria-label="Turi bo'yicha filtr">
+    <button class="chip on" data-f="all">Hammasi</button>
+    <button class="chip" data-f="yumshoq">Yumshoq</button>
+    <button class="chip" data-f="qatlam">Qatlamli</button>
+    <button class="chip" data-f="quruq">Quruq</button>
+  </div>
+  <div class="list" id="list"></div>
+</section>
+
+<section id="pishish" class="wrap bake">
+  <div class="gauge-col">
+    <div class="gauge" aria-hidden="true"><div class="mercury" id="merc"></div><span id="deg">20°</span></div>
+  </div>
+  <div class="steps">
+    <h2>Bir non qanday pishadi</h2>
+    <ol id="steps">
+      <li data-t="20"><b>Xamir qoriladi.</b> Un, suv, tuz va ozgina xamirturush. Kechqurun qorib, tun bo'yi qo'yiladi.</li>
+      <li data-t="120"><b>Tandir qiziydi.</b> Saksovul o'tin ikki soat yonadi, devor qizarguncha kutiladi.</li>
+      <li data-t="250"><b>Shakl beriladi.</b> Non yoyilib, o'rtasi chekich bilan bosiladi, yuziga suv sepiladi.</li>
+      <li data-t="320"><b>Devorga yopiladi.</b> Nonvoy qo'lini kuydirmaslik uchun ho'l mato bilan yopishtiradi.</li>
+      <li data-t="380"><b>Tortiladi.</b> Taxminan 8 daqiqada qizarib pishadi va darrov dasturxonga chiqadi.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="xamir" class="wrap">
+  <h2>Xamir hisoblagichi</h2>
+  <p class="lead">Uyda non yopmoqchi bo'lsangiz, kerakli masalliqlarni hisoblang.</p>
+  <div class="box">
+    <label>Nonlar soni: <output id="o1">6</output>
+      <input type="range" id="cnt" min="1" max="40" value="6"></label>
+    <label>Non turi
+      <select id="kind">
+        <option value="1">Patir (o'rtacha 400 g)</option>
+        <option value="0.7">Lochira (300 g)</option>
+        <option value="1.4">Obi non (550 g)</option>
+      </select></label>
+    <ul class="res">
+      <li><strong id="r1">0</strong> g un</li>
+      <li><strong id="r2">0</strong> ml iliq suv</li>
+      <li><strong id="r3">0</strong> g tuz</li>
+      <li><strong id="r4">0</strong> g xamirturush</li>
+    </ul>
+  </div>
+</section>
+
+<section id="buyurtma" class="wrap">
+  <h2>Buyurtma</h2>
+  <form id="form" class="box" novalidate>
+    <label>Ismingiz<input name="name" autocomplete="name"><em></em></label>
+    <label>Telefon<input name="phone" inputmode="tel" placeholder="+998 90 123 45 67"><em></em></label>
+    <label>Non turi<select name="type" id="typeSel"></select><em></em></label>
+    <label>Soni<input name="qty" type="number" value="5"><em></em></label>
+    <label>Olib ketish vaqti<select name="slot" id="slotSel"></select><em></em></label>
+    <button class="btn" type="submit">Buyurtmani yuborish</button>
+    <p id="ok" role="status"></p>
+  </form>
+</section>
+
+<footer>© 2026 TANDIR nonvoyxonasi, Samarqand. Har kuni 06:00 dan 20:00 gacha.</footer>
+<script src="script.js"></script>
+</body>
+</html>
